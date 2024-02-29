@@ -1,3 +1,5 @@
+console.log("JS file is connected");
+
 // variables always go at the top -> this is step 1
 // these are the connections that you're making to elements on the page 
 // use CSS selectors to make connections to elements with JavaScript
@@ -19,13 +21,30 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 // functionality always goes in the middle -> how do we want
 // the app to behave?
 function changeBGImage() {
-	// the `` is a JavaScript template string. It tells the JS enging to evaluate the expression
+    const bgID = this.id; // retrieves id of clicked button 
+    
+    // the `` is a JavaScript template string. It tells the JS enging to evaluate the expression
 	// inside the braces - run that little bit of code. In this case it's just pulling the ID of the
 	// button we clicked on and putting it at the end of the image name (0, 1, 2, 3)
 	// and updating the background-image style of the puzzle board element.
 
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
-	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+    puzzleBoard.style.backgroundImage = `url(images/backGround${bgID}.jpg)`;
+
+    // update puzzle pieces images
+    puzzlePieces.forEach(piece => {
+        const prevPieceImage = piece.getAttribute('src');
+        piece.src = prevPieceImage.replace(/\d/g, bgID);
+    });
+
+    // reset dropped pieces to puzzlePiecesBox
+    dropZones.forEach(zone => {
+        const droppedPiece = zone.firstChild;
+        if (droppedPiece) {
+            puzzlePiecesBox.appendChild(droppedPiece);
+            droppedPiece.classList.remove("dropped");
+        }
+    });
 }
 
 function handleStartDrag() { 
