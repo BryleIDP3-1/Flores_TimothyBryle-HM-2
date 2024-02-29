@@ -23,7 +23,7 @@ Open index.html in the browser of your choice.
 
 **Created on February 27, 2023**
 
-**Created on February 29, 2023**
+**Finished on February 29, 2023**
 
 ## Credits :writing_hand:
 Published by:
