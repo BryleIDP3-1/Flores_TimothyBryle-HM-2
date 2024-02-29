@@ -1,4 +1,4 @@
-# Flores_TimothyBryle-HM-2
+# Flores_TimothyBryle-HM-2 :spider:
 This repo is for homework 2, demonstrating crashing bugs for the Puzzle Drag and Drop file troubleshooting in Javascript 
 
 
@@ -22,6 +22,8 @@ Open index.html in the browser of your choice.
 ## History :clock8:
 
 **Created on February 27, 2023**
+
+**Created on February 29, 2023**
 
 ## Credits :writing_hand:
 Published by:
