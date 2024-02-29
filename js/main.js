@@ -60,14 +60,24 @@ function handleDragOver(e) {
 	console.log('dragged over me'); 
 }
 
-function handleDrop(e) { 
-	e.preventDefault();
-	console.log('dropped something on me');
-	// bug fix #1 should go here, and it's at most 3 lines of JS code
-
-	// this line is going to move the dragged piece from the left side of the board
-	// into whatever drop zone we choose. appendChild means "add element to the container"
-	this.appendChild(draggedPiece);
+function handleDrop(e) {
+    e.preventDefault();
+    console.log('dropped something on me');
+    // bug fix #1 should go here, and it's at most 3 lines of JS code
+    
+	// checks if drop zone already contain child elements
+	if (this.children.length >= 1) {
+		
+	} 
+	
+    // if drop zone doesn't contain any child elements
+    // means empty and ready to accept dropped piece
+	else {
+		this.appendChild(draggedPiece);
+	}
+    // this line is going to move the dragged piece from the left side of the board
+    // into whatever drop zone we choose. appendChild means "add element to the container"
+   
 }
 // step 2
 // event handling always goes at the bottom => 
